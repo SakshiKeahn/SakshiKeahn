@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+        }
+        nav {
+            background-color: #004080;
+            color: white;
+            width: 200px;
+            padding-top: 20px;
+            flex-shrink: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            padding: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #003366;
+        }
+        nav ul li.active {
+            background-color: #0059b3;
+        }
+        main {
+            padding: 20px;
+            flex-grow: 1;
+            background-color: #f4f4f4;
+        }
+        .asset-overview, .investment-overview, .transaction-list, .reports {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .chart-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .chart-container > div {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .chart-container > div:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+            <span>Bank Name</span>
+        </div>
+        <div class="user-profile">
+            <select onchange="handleProfileChange(event)">
+                <option value="">User Profile</option>
+                <option value="logout">Logout</option>
+            </select>
+        </div>
+    </header>
+    <div style="display: flex; flex-grow: 1;">
+        <nav>
+            <ul>
+                <li class="active">Dashboard</li>
+                <li>Investments</li>
+                <li>Transactions</li>
+                <li>Reports</li>
+                <li>Settings</li>
+            </ul>
+        </nav>
+        <main>
+            <section class="asset-overview">
+                <h2>Asset Overview</h2>
+                <div class="chart-container">
+                    <div>
+                        <h3>Total Assets Value</h3>
+                        <!-- Graph or Value -->
+                    </div>
+                    <div>
+                        <h3>Recent Activity</h3>
+                        <!-- Graph or List -->
+                    </div>
+                    <div>
+                        <h3>Asset Allocation</h3>
+                        <!-- Pie Chart -->
+                    </div>
+                </div>
+            </section>
+            <!-- Other sections for Investments, Transactions, Reports, etc. can be placed here -->
+        </main>
+    </div>
+    <footer>
+        <!-- Footer content -->
+    </footer>
+    <nav>
+        <ul>   <li><a href="dashboard.html">Dashboard</a></li>
+            <li class="active"><a href="investments.html">Investments</a></li>
+            <li><a href="transactions.html">Transactions</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+    </nav>
+    <script>
+        function handleProfileChange(event) {
+            if (event.target.value === 'logout') {
+                window.location.href = 'login.html'; // Redirect to the login page
+            }
+        }
+    </script>
+</body>
+</html>
